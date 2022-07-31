@@ -62,8 +62,14 @@ body {
  outline: none;
 }
 
+.people-label {
+ display: flex;
+}
+
 .error {
  display: none;
+ color: crimson;
+ margin-left: auto;
 }
 
 .calculator__field--bill,
@@ -104,6 +110,14 @@ body {
  color: var(--color-calc-bg);
  text-align: center;
  cursor: pointer;
+}
+
+.calculator__input--radio:hover {
+ opacity: .85;
+}
+
+.selected-radio {
+ background: var(--color-active);
 }
 
 .calculator__tip-amounts {
@@ -169,6 +183,15 @@ body {
  font-size: 1.8rem;
  border-radius: 4px;
  padding: 1rem;
+}
+
+.btn:hover {
+ opacity: .85;
+}
+
+.btn:disabled {
+ opacity: .2;
+ cursor: not-allowed;
 }
 
 @media(min-width: 1000px){
