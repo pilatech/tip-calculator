@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="style.css">
 
@@ -12,27 +16,72 @@
 
 </head>
 <body>
-
-  Bill
-
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
-
-  Number of People
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
-  
+  <div class="container">
+   <h1 class="title">Spli<br>tter</h1>
+   <div class="calculator">
+     <div class="calculator__actions">
+       <label class="calculator__field calculator__field--bill">
+         Bill
+         <input class="calculator__input calculator__input--bill" type="number" name="bill">
+       </label>
+       <fieldset class="calculator__field calculator__field--amounts">
+        <legend>Select Tip %</legend>
+        <div class="calculator__tip-amounts">
+         <label class="calculator__input calculator__input--radio">
+          5%
+          <input class="calculator__radio" type="radio" name="tip" value="5">
+          </label>
+          <label class="calculator__input calculator__input--radio">
+           10%
+           <input class="calculator__radio" type="radio" name="tip" value="10">
+         </label>
+         <label class="calculator__input calculator__input--radio">
+          15%
+          <input class="calculator__radio" type="radio" name="tip" value="15">
+        </label>
+        <label class="calculator__input calculator__input--radio">
+         25%
+         <input class="calculator__radio" type="radio" name="tip" value="25">
+       </label>
+       <label class="calculator__input calculator__input--radio">
+        50%
+        <input class="calculator__radio" type="radio" name="tip" value="50">
+      </label>
+         <input class="calculator__input calculator__input--tip" placeholder="Custom" type="number" name="customTip">
+        </div>
+      </fieldset>
+      <label class="calculator__field calculator__field--number">
+       <span>Number of People <em class="error">Can't be zero</em></span>
+       <input class="calculator__input calculator__input--number" type="number" name="number">
+     </label>
+     </div>
+     <div class="calculator__results">
+       <p class="result__row">
+        <strong class="result__title">
+        Tip Amount
+        <small class="result__detail">
+         /person
+        </small>
+       </strong>
+        <em id="split-tip" class="result__amount">
+         $0.00
+        </em>
+       </p>
+       <p class="result__row">
+        <strong class="result__title">
+        Total
+        <small class="result__detail">
+         /person
+        </small>
+       </strong>
+        <em id="total-tip" class="result__amount">
+         $0.00
+        </em>
+       </p>
+       <button class="btn">Reset</button>
+     </div>
+   </div>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
